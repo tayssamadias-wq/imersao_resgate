@@ -6,15 +6,12 @@
     <meta name="description" content="Resgate do Feminino - Masterclass com Tayssa Machado">
     <title>Resgate do Feminino | Masterclass Exclusiva</title>
     
-    <!-- Fontes Google: Playfair Display (Sofisticação) e Lato (Leitura) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
-    <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Configuração de Cores Personalizadas -->
     <script>
         tailwind.config = {
             theme: {
@@ -43,6 +40,51 @@
     </script>
 
     <style>
+        /* --- ESTILOS DA BARRA DE PROGRESSO --- */
+        .top-progress-container {
+            position: relative;
+            width: 100%;
+            height: 38px; /* Altura da barra */
+            background-color: #2b050d; /* Um vinho quase preto para o fundo */
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            z-index: 50;
+        }
+
+        .progress-fill {
+            height: 100%;
+            width: 0%; /* Começa em 0 para animar */
+            background: linear-gradient(90deg, #800020, #a31535); /* Gradiente de vinho avermelhado */
+            transition: width 1.5s cubic-bezier(0.22, 1, 0.36, 1); /* Animação elegante */
+        }
+
+        .progress-text {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-family: 'Lato', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            z-index: 2;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .progress-text .highlight {
+            color: #c5a059; /* Cor Dourada da marca */
+            margin-right: 6px;
+            font-size: 15px;
+            font-weight: 900;
+        }
+
+        /* --- OUTROS ESTILOS --- */
         /* Animação Pulsante para o Botão */
         @keyframes pulse-custom {
             0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); transform: scale(1); }
@@ -66,8 +108,7 @@
             box-shadow: 15px 15px 0px 0px #c5a059;
         }
     </style>
-    <!-- Meta Pixel Code -->
-<script>
+    <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -82,28 +123,28 @@ fbq('track', 'PageView');
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=561663293315878&ev=PageView&noscript=1"
 /></noscript>
-<!-- End Meta Pixel Code -->
 </head>
 <body class="font-sans text-brand-text bg-brand-nude overflow-x-hidden antialiased">
-    <div class="w-full bg-[#800020] text-white text-center py-3 px-4 font-bold text-sm md:text-base uppercase tracking-wider relative z-50 shadow-md">
-    Últimas vagas para a Masterclass
-</div>
+    
+    <div class="top-progress-container">
+        <div class="progress-fill" id="progressBarFill"></div>
+        
+        <div class="progress-text">
+            <span class="highlight">31%</span> das vagas completadas
+        </div>
+    </div>
 
-    <!-- HERO SECTION -->
     <header class="relative bg-brand-wine text-white pt-8 pb-16 px-4 md:px-8 text-center bg-texture">
-        <!-- Gradiente Overlay -->
         <div class="absolute inset-0 bg-gradient-to-b from-black/50 to-brand-wine/90 z-0"></div>
 
         <div class="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
             
-            <!-- Logo (Placeholder visual usando CSS, substitua a tag img se tiver o arquivo local) -->
             <div class="mb-6">
-    <img src="https://i.ibb.co/RkFdjVDP/4d3b2c81-0736-44c9-aa37-d254354bef9d.png" 
-         alt="Resgate do Feminino" 
-         class="w-48 md:w-64 mx-auto drop-shadow-lg">
-</div>
+                <img src="https://i.ibb.co/RkFdjVDP/4d3b2c81-0736-44c9-aa37-d254354bef9d.png" 
+                     alt="Resgate do Feminino" 
+                     class="w-48 md:w-64 mx-auto drop-shadow-lg">
+            </div>
 
-            <!-- Headline -->
             <h1 class="font-serif text-3xl md:text-5xl font-bold leading-tight mb-6 text-white drop-shadow-md">
                 Descubra como Identificar suas Feridas Emocionais e se Tornar a Mulher que o Mundo Reconhece como <span class="text-brand-gold italic">Rara</span>.
             </h1>
@@ -112,14 +153,12 @@ src="https://www.facebook.com/tr?id=561663293315878&ev=PageView&noscript=1"
                 Ative sua versão mais Valiosa e Rara
             </p>
 
-            <!-- Box de Aviso -->
             <div class="bg-red-900/40 border border-red-400/30 p-4 rounded-lg mb-8 max-w-2xl mx-auto backdrop-blur-sm">
                 <p class="text-sm md:text-base text-gray-100">
                     <span class="font-bold text-red-300">⚠️ ATENÇÃO:</span> O link de acesso à Masterclass do dia 17/01 às 9h <strong>NÃO</strong> será enviado por e-mail. As vagas são limitadas. Para garantir o acesso à sala secreta, você precisa estar no Grupo VIP.
                 </p>
             </div>
 
-            <!-- Botão CTA Principal -->
             <a href="https://chat.whatsapp.com/KOMHnt9nSM91yRWWmqcw1S" target="_blank" class="btn-pulse inline-flex items-center justify-center bg-whatsapp hover:bg-whatsappHover text-white font-bold text-lg md:text-xl py-4 px-8 rounded-full transition-all duration-300 shadow-lg transform hover:-translate-y-1 w-full md:w-auto">
                 <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
                 ENTRAR NO GRUPO SECRETO
@@ -128,7 +167,6 @@ src="https://www.facebook.com/tr?id=561663293315878&ev=PageView&noscript=1"
         </div>
     </header>
 
-    <!-- O QUE VOCÊ VAI DESCOBRIR -->
     <section class="py-16 px-4 md:px-8 bg-white">
         <div class="max-w-4xl mx-auto">
             <h2 class="font-serif text-3xl md:text-4xl text-brand-wine font-bold text-center mb-12">
@@ -136,7 +174,6 @@ src="https://www.facebook.com/tr?id=561663293315878&ev=PageView&noscript=1"
             </h2>
 
             <div class="grid md:grid-cols-2 gap-8">
-                <!-- Item 1 -->
                 <div class="flex items-start">
                     <div class="flex-shrink-0 mt-1">
                         <svg class="w-6 h-6 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
@@ -147,7 +184,6 @@ src="https://www.facebook.com/tr?id=561663293315878&ev=PageView&noscript=1"
                     </div>
                 </div>
 
-                <!-- Item 2 -->
                 <div class="flex items-start">
                     <div class="flex-shrink-0 mt-1">
                         <svg class="w-6 h-6 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
@@ -155,121 +191,3 @@ src="https://www.facebook.com/tr?id=561663293315878&ev=PageView&noscript=1"
                     <div class="ml-4">
                         <h3 class="font-serif font-bold text-xl text-brand-wineLight mb-2">O Segredo do Magnetismo</h3>
                         <p class="text-gray-600 leading-relaxed">Por que você se sente invisível e como ativar a postura que faz você ser valorizada e protegida naturalmente.</p>
-                    </div>
-                </div>
-
-                <!-- Item 3 -->
-                <div class="flex items-start">
-                    <div class="flex-shrink-0 mt-1">
-                        <svg class="w-6 h-6 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    </div>
-                    <div class="ml-4">
-                        <h3 class="font-serif font-bold text-xl text-brand-wineLight mb-2">A Cura da Rigidez</h3>
-                        <p class="text-gray-600 leading-relaxed">Como blindar suas emoções sem precisar vestir uma armadura que afasta quem você ama.</p>
-                    </div>
-                </div>
-
-                <!-- Item 4 -->
-                <div class="flex items-start">
-                    <div class="flex-shrink-0 mt-1">
-                        <svg class="w-6 h-6 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    </div>
-                    <div class="ml-4">
-                        <h3 class="font-serif font-bold text-xl text-brand-wineLight mb-2">O Caminho da Mulher Rara</h3>
-                        <p class="text-gray-600 leading-relaxed">Os passos exatos para se posicionar sem perder a doçura da sua essência feminina.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PARA QUEM É -->
-    <section class="py-16 px-4 md:px-8 bg-brand-nude">
-        <div class="max-w-3xl mx-auto">
-            <h2 class="font-serif text-3xl md:text-4xl text-brand-wine font-bold text-center mb-10">
-                Para quem é esta Masterclass?
-            </h2>
-            
-            <div class="bg-white p-8 rounded-xl shadow-sm border border-brand-gold/20">
-                <ul class="space-y-6">
-                    <li class="flex items-start">
-                        <span class="text-red-500 font-bold text-xl mr-3">✓</span>
-                        <p class="text-gray-700">Para você que sente que carrega o mundo nas costas e, se parar, tudo desaba.</p>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-red-500 font-bold text-xl mr-3">✓</span>
-                        <p class="text-gray-700">Ama seu marido (ou quer ter um), mas sente que a dinâmica virou uma disputa de poder ou frieza.</p>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-red-500 font-bold text-xl mr-3">✓</span>
-                        <p class="text-gray-700">Tem sucesso em várias áreas, mas sente um vazio e uma solidão profunda quando deita a cabeça no travesseiro.</p>
-                    </li>
-                    <li class="flex items-start bg-brand-wine/5 p-4 rounded-lg -mx-2">
-                        <span class="text-green-600 font-bold text-xl mr-3">✓</span>
-                        <p class="text-brand-wine font-semibold">Deseja parar de lutar e começar a reinar na sua própria vida.</p>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="text-center mt-10">
-                <a href="https://chat.whatsapp.com/KOMHnt9nSM91yRWWmqcw1S" class="inline-block bg-brand-wine hover:bg-brand-wineLight text-white font-bold py-3 px-8 rounded-full transition duration-300">
-                    QUERO REINAR NA MINHA VIDA
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- BIO: QUEM É TAYSSA MACHADO -->
-    <section class="py-16 px-4 md:px-8 bg-white">
-        <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12">
-            
-            <!-- Foto -->
-            <div class="w-full md:w-1/2 flex justify-center">
-                <div class="relative">
-                    <div class="absolute inset-0 border-2 border-brand-gold transform translate-x-4 translate-y-4"></div>
-                    <img src="https://i.ibb.co/x8C4HX7t/Whats-App-Image-2026-01-06-at-17-58-25.jpg" alt="Tayssa Machado" class="relative z-10 w-full max-w-sm grayscale-[20%] hover:grayscale-0 transition duration-700 rounded shadow-lg object-cover">
-                    <!-- Nota: Usei um link direto para a imagem baseado no seu input. Se a imagem não carregar, verifique a URL. -->
-                </div>
-            </div>
-
-            <!-- Texto -->
-            <div class="w-full md:w-1/2">
-                <h2 class="font-serif text-3xl font-bold text-brand-wine mb-6">Quem é Tayssa Machado?</h2>
-                
-                <div class="space-y-4 text-gray-700 leading-relaxed font-light">
-                    <p>
-                        Tayssa Machado é a idealizadora do movimento <strong>Resgate do Feminino</strong> e criadora do <strong>Método DCA</strong>
-                    </p>
-                    <p>
-                        Ao contrário do que se vê por aí, Tayssa não ensina técnicas superficiais. Sua abordagem é profunda e fundamentada na união entre a <strong>Psicologia Clínica, a Psicodinâmica dos Relacionamentos e a Sabedoria Ancestral do Feminino.</strong>
-                    </p>
-                    <p>
-                        Ela decodificou o motivo exato pelo qual mulheres brilhantes se tornam duras, inseguras e exaustas dentro de seus relacionamentos. Hoje, ela guia mulheres a retirarem suas máscaras de proteção para acessarem seu verdadeiro poder: uma feminilidade que inspira, cura e magnetiza.
-                    </p>
-                    <p class="font-serif text-brand-wine font-bold italic text-lg mt-4 border-l-4 border-brand-gold pl-4">
-                        "No dia 17/01, eu serei sua mentora nesta travessia."
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER / CTA FINAL -->
-    <footer class="bg-brand-wine text-white py-12 px-4 md:px-8 text-center bg-texture relative">
-        <div class="absolute inset-0 bg-black/40 z-0"></div> <!-- Overlay escuro -->
-        
-        <div class="relative z-10 max-w-2xl mx-auto">
-            <h3 class="font-serif text-2xl md:text-3xl font-bold mb-4">Não deixe para depois.</h3>
-            <p class="text-gray-300 mb-8">As vagas são limitadas. Garanta seu acesso agora.</p>
-            
-            <a href="https://chat.whatsapp.com/KOMHnt9nSM91yRWWmqcw1S" target="_blank" class="inline-flex items-center justify-center bg-whatsapp hover:bg-whatsappHover text-white font-bold text-lg py-4 px-10 rounded-full transition-all duration-300 shadow-xl transform hover:scale-105">
-                <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
-                TOCAR AQUI E ENTRAR NO GRUPO VIP
-            </a>
-            
-            <p class="mt-8 text-xs text-gray-500 font-sans">© 2026 Resgate do Feminino. Todos os direitos reservados.</p>
-        </div>
-    </footer>
-
-</body>
-</html>
